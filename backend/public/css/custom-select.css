@@ -1,0 +1,109 @@
+/*================Custom Select Box Styling========================*/
+
+.s-hidden {
+    visibility: hidden;
+    padding-right: 10px;
+    position: absolute;
+}
+
+.select {
+    background: transparent;
+    width: 100%;
+    height: auto;
+    display: block;
+    font-size: 16px;
+    line-height: 25px;
+    color: #232323;
+    font-weight: 500;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    position: relative;
+}
+
+.styledSelect {
+    background: #ECEFF4;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: none;
+    padding: 14px 13px;
+    font-size: 15px;
+    line-height: 18px;
+    color: #656565;
+    outline: none;
+    height: 46px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.styledSelect:after {
+    content: "";
+    width: 9px;
+    height: 9px;
+    border-top: 2px solid #656565;
+    border-left: 0px solid transparent;
+    border-right: 2px solid #656565;
+    border-bottom: 0px solid transparent;
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    -webkit-transform: translateY(-50%) rotate(134deg);
+    -moz-transform: translateY(-50%) rotate(134deg);
+    -ms-transform: translateY(-50%) rotate(134deg);
+    transform: translateY(-50%) rotate(134deg);
+    -o-transform: translateY(-50%) rotate(134deg);
+}
+
+
+/* .styledSelect:active, .styledSelect.active {
+position: relative;
+} */
+
+.styledSelect.active::after {
+    -webkit-transform: translateY(-50%) rotate(-43deg);
+    -moz-transform: translateY(-50%) rotate(-43deg);
+    -ms-transform: translateY(-50%) rotate(-43deg);
+    transform: translateY(-50%) rotate(-43deg);
+    -o-transform: translateY(-50%) rotate(-43deg);
+}
+
+.options {
+    display: none;
+    position: absolute;
+    top: 49px;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    margin: 2px 0 0 !important;
+    padding: 0 0;
+    list-style: none;
+    border: 1px solid #ECEFF4;
+    border-radius: 6px;
+    background-color: white;
+    overflow: hidden;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.options li {
+    padding: 0 6px;
+    margin: 0 !important;
+    padding: 6px 10px 4px;
+    width: 100% !important;
+}
+
+.options li:hover {
+    background-color: #1FA9A4;
+    color: white;
+}
+
+
+/*===============================================*/

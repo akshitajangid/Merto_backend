@@ -1,0 +1,883 @@
+include ../layout/header
+<body>
+<div class="dashboard-area">
+
+    include ../layout/sidebar
+    include ../layout/topnav
+        <div class="dashboard-main">
+            <div class="breadcrumbs">
+                <h1>View User</h1>
+                <ul>
+                    <li><a href="#">Users</a></li>
+                    <li><a href="#">All Users</a></li>
+                    <li>View User</li>
+                </ul>
+            </div>
+
+            <div class="dashboard-main-panel">
+                <div class="view-user-panel">
+                    <h2>View User</h2>
+                    <div class="view-user-panel-inner">
+                        <figure>
+                            <img src="#{process.env.APP_URL}public/images/pic3.png" alt="">
+                        </figure>
+                        <div class="box1">
+                            <h3>John Deo</h3>
+                            <span>johndeo@gmail.com</span>
+                            <span>+1-1234567890</span>
+                        </div>
+                        <div class="box1">
+                            <span>Submit Form : 34</span>
+                            <div class="active-tag">Active</div>
+                        </div>
+                        <div class="box1 right">
+                            <span>Block User</span>
+                            <div class="blocked-tag">Block</div>
+                        </div>
+                    </div>
+                </div>
+
+                <nav id="tabs_nav1" class="tabs_nav1">
+                    <a href="#">Worker Daily Log</a>
+                    <a href="#">Safety Meeting</a>
+                    <a href="#">Inspections</a>
+                    <a href="#">Hazard Assessments</a>
+                    <a href="#">Journey Management</a>
+                </nav>
+
+                <div id="tabs_container1" class="tab_container">
+                    <div>
+                        <div class="view-user-page-content">
+                            <div class="custom-datatable">
+                                <h2>Worker Daily Log</h2>
+                                <div class="date_filter">
+                                    <input type="text" name="" id="daterange">
+                                </div>
+                                <table id="" class="table nowrap table-bordered table_1" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <div class="checkbox1">
+                                                    <label for="checkAll">
+                                                        <figure>
+                                                            <input type="checkbox" name="checkAll" id="checkAll">
+                                                            <i></i>
+                                                        </figure>
+                                                        S.NO
+                                                    </label>
+                                                </div>
+                                            </th>
+                                            <th>Date</th>
+                                            <th>Submit Date and time</th>
+                                            <th>Location</th>
+                                            <th>Unit number</th>
+                                            <th>Hours Worked</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox1">
+                                                    <label for="chk1">
+                                                        <figure>
+                                                            <input type="checkbox" name="chk1" id="chk1">
+                                                            <i></i>
+                                                        </figure>
+                                                        1
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>abc city</td>
+                                            <td>123456</td>
+                                            <td>5:30 hr</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox1">
+                                                    <label for="chk2">
+                                                        <figure>
+                                                            <input type="checkbox" name="chk1" id="chk2">
+                                                            <i></i>
+                                                        </figure>
+                                                        2
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>abc city</td>
+                                            <td>123456</td>
+                                            <td>5:30 hr</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox1">
+                                                    <label for="chk3">
+                                                        <figure>
+                                                            <input type="checkbox" name="chk1" id="chk3">
+                                                            <i></i>
+                                                        </figure>
+                                                        3
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>abc city</td>
+                                            <td>123456</td>
+                                            <td>5:30 hr</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox1">
+                                                    <label for="chk4">
+                                                        <figure>
+                                                            <input type="checkbox" name="chk1" id="chk4">
+                                                            <i></i>
+                                                        </figure>
+                                                        4
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>abc city</td>
+                                            <td>123456</td>
+                                            <td>5:30 hr</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox1">
+                                                    <label for="chk5">
+                                                        <figure>
+                                                            <input type="checkbox" name="chk1" id="chk5">
+                                                            <i></i>
+                                                        </figure>
+                                                        5
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>abc city</td>
+                                            <td>123456</td>
+                                            <td>5:30 hr</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox1">
+                                                    <label for="chk6">
+                                                        <figure>
+                                                            <input type="checkbox" name="chk1" id="chk6">
+                                                            <i></i>
+                                                        </figure>
+                                                        6
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>abc city</td>
+                                            <td>123456</td>
+                                            <td>5:30 hr</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox1">
+                                                    <label for="chk7">
+                                                        <figure>
+                                                            <input type="checkbox" name="chk1" id="chk7">
+                                                            <i></i>
+                                                        </figure>
+                                                        7
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>abc city</td>
+                                            <td>123456</td>
+                                            <td>5:30 hr</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox1">
+                                                    <label for="chk8">
+                                                        <figure>
+                                                            <input type="checkbox" name="chk1" id="chk8">
+                                                            <i></i>
+                                                        </figure>
+                                                        8
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>abc city</td>
+                                            <td>123456</td>
+                                            <td>5:30 hr</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox1">
+                                                    <label for="chk9">
+                                                        <figure>
+                                                            <input type="checkbox" name="chk1" id="chk9">
+                                                            <i></i>
+                                                        </figure>
+                                                        9
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>abc city</td>
+                                            <td>123456</td>
+                                            <td>5:30 hr</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox1">
+                                                    <label for="chk10">
+                                                        <figure>
+                                                            <input type="checkbox" name="chk1" id="chk10">
+                                                            <i></i>
+                                                        </figure>
+                                                        10
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>abc city</td>
+                                            <td>123456</td>
+                                            <td>5:30 hr</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="table-btn-area">
+                                    <a href="#" class="custom-btn2">Download PDF</a>
+                                    <a href="#" class="custom-btn2">Download Excel</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="view-user-page-content c_table1">
+                            <div class="custom-datatable">
+                                <h2>Safety Meeting</h2>
+                                <table id="" class="table nowrap table-bordered table_1" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Date</th>
+                                            <th>Submit Date and time</th>
+                                            <th>Division</th>
+                                            <th>Activity</th>
+                                            <th>Team Lead</th>
+                                            <th>Location</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>Integrity Industries North</td>
+                                            <td>Seismic Clearing Operations</td>
+                                            <td>John Deo</td>
+                                            <td>abc city</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>Integrity Industries North</td>
+                                            <td>Seismic Clearing Operations</td>
+                                            <td>John Deo</td>
+                                            <td>abc city</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>Integrity Industries North</td>
+                                            <td>Seismic Clearing Operations</td>
+                                            <td>John Deo</td>
+                                            <td>abc city</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>Integrity Industries North</td>
+                                            <td>Seismic Clearing Operations</td>
+                                            <td>John Deo</td>
+                                            <td>abc city</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>Integrity Industries North</td>
+                                            <td>Seismic Clearing Operations</td>
+                                            <td>John Deo</td>
+                                            <td>abc city</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>Integrity Industries North</td>
+                                            <td>Seismic Clearing Operations</td>
+                                            <td>John Deo</td>
+                                            <td>abc city</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>Integrity Industries North</td>
+                                            <td>Seismic Clearing Operations</td>
+                                            <td>John Deo</td>
+                                            <td>abc city</td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>Integrity Industries North</td>
+                                            <td>Seismic Clearing Operations</td>
+                                            <td>John Deo</td>
+                                            <td>abc city</td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>Integrity Industries North</td>
+                                            <td>Seismic Clearing Operations</td>
+                                            <td>John Deo</td>
+                                            <td>abc city</td>
+                                        </tr>
+                                        <tr>
+                                            <td>10</td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>Integrity Industries North</td>
+                                            <td>Seismic Clearing Operations</td>
+                                            <td>John Deo</td>
+                                            <td>abc city</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="table-btn-area">
+                                    <a href="#" class="custom-btn2">Download PDF</a>
+                                    <a href="#" class="custom-btn2">Download Excel</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div id="tabs_nav2" class="tabs_nav2">
+                            <a href="#">ATV Inspection</a>
+                            <a href="#">Truck Inspection</a>
+                            <a href="#">Mulcher Inspection</a>
+                        </div>
+
+                        <div id="tabs_container2" class="tab_container">
+                            <div>
+                                <div class="view-user-page-content c_table1">
+                                    <div class="custom-datatable">
+                                        <h2>ATV Inspection</h2>
+                                        <table id="" class="table nowrap table-bordered table_1" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Date</th>
+                                                    <th>Submit Date and time</th>
+                                                    <th>Unit #</th>
+                                                    <th>Hours</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>12 May 2021</td>
+                                                    <td>12 May 2021, 12:56 pm</td>
+                                                    <td>12345</td>
+                                                    <td>2:34</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>12 May 2021</td>
+                                                    <td>12 May 2021, 12:56 pm</td>
+                                                    <td>12345</td>
+                                                    <td>2:34</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>12 May 2021</td>
+                                                    <td>12 May 2021, 12:56 pm</td>
+                                                    <td>12345</td>
+                                                    <td>2:34</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>12 May 2021</td>
+                                                    <td>12 May 2021, 12:56 pm</td>
+                                                    <td>12345</td>
+                                                    <td>2:34</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>12 May 2021</td>
+                                                    <td>12 May 2021, 12:56 pm</td>
+                                                    <td>12345</td>
+                                                    <td>2:34</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>6</td>
+                                                    <td>12 May 2021</td>
+                                                    <td>12 May 2021, 12:56 pm</td>
+                                                    <td>12345</td>
+                                                    <td>2:34</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>7</td>
+                                                    <td>12 May 2021</td>
+                                                    <td>12 May 2021, 12:56 pm</td>
+                                                    <td>12345</td>
+                                                    <td>2:34</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>8</td>
+                                                    <td>12 May 2021</td>
+                                                    <td>12 May 2021, 12:56 pm</td>
+                                                    <td>12345</td>
+                                                    <td>2:34</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>9</td>
+                                                    <td>12 May 2021</td>
+                                                    <td>12 May 2021, 12:56 pm</td>
+                                                    <td>12345</td>
+                                                    <td>2:34</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>10</td>
+                                                    <td>12 May 2021</td>
+                                                    <td>12 May 2021, 12:56 pm</td>
+                                                    <td>12345</td>
+                                                    <td>2:34</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="table-btn-area">
+                                            <a href="#" class="custom-btn2">Download PDF</a>
+                                            <a href="#" class="custom-btn2">Download Excel</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="view-user-page-content c_table1">
+                                    <div class="custom-datatable">
+                                        <h2>Truck Inspection</h2>
+                                        <table id="" class="table nowrap table-bordered table_1" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Date</th>
+                                                    <th>Submit Date and time</th>
+                                                    <th>Unit #</th>
+                                                    <th>Hours</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>12 May 2021</td>
+                                                    <td>12 May 2021, 12:56 pm</td>
+                                                    <td>12345</td>
+                                                    <td>2:34</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>12 May 2021</td>
+                                                    <td>12 May 2021, 12:56 pm</td>
+                                                    <td>12345</td>
+                                                    <td>2:34</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>12 May 2021</td>
+                                                    <td>12 May 2021, 12:56 pm</td>
+                                                    <td>12345</td>
+                                                    <td>2:34</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>12 May 2021</td>
+                                                    <td>12 May 2021, 12:56 pm</td>
+                                                    <td>12345</td>
+                                                    <td>2:34</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>12 May 2021</td>
+                                                    <td>12 May 2021, 12:56 pm</td>
+                                                    <td>12345</td>
+                                                    <td>2:34</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>6</td>
+                                                    <td>12 May 2021</td>
+                                                    <td>12 May 2021, 12:56 pm</td>
+                                                    <td>12345</td>
+                                                    <td>2:34</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>7</td>
+                                                    <td>12 May 2021</td>
+                                                    <td>12 May 2021, 12:56 pm</td>
+                                                    <td>12345</td>
+                                                    <td>2:34</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>8</td>
+                                                    <td>12 May 2021</td>
+                                                    <td>12 May 2021, 12:56 pm</td>
+                                                    <td>12345</td>
+                                                    <td>2:34</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>9</td>
+                                                    <td>12 May 2021</td>
+                                                    <td>12 May 2021, 12:56 pm</td>
+                                                    <td>12345</td>
+                                                    <td>2:34</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>10</td>
+                                                    <td>12 May 2021</td>
+                                                    <td>12 May 2021, 12:56 pm</td>
+                                                    <td>12345</td>
+                                                    <td>2:34</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="table-btn-area">
+                                            <a href="#" class="custom-btn2">Download PDF</a>
+                                            <a href="#" class="custom-btn2">Download Excel</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="view-user-page-content c_table1">
+                                    <div class="custom-datatable">
+                                        <h2>Mulcher Inspection</h2>
+                                        <table id="" class="table nowrap table-bordered table_1" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Date</th>
+                                                    <th>Submit Date and time</th>
+                                                    <th>Unit #</th>
+                                                    <th>Hours</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>12 May 2021</td>
+                                                    <td>12 May 2021, 12:56 pm</td>
+                                                    <td>12345</td>
+                                                    <td>2:34</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>12 May 2021</td>
+                                                    <td>12 May 2021, 12:56 pm</td>
+                                                    <td>12345</td>
+                                                    <td>2:34</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>12 May 2021</td>
+                                                    <td>12 May 2021, 12:56 pm</td>
+                                                    <td>12345</td>
+                                                    <td>2:34</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>12 May 2021</td>
+                                                    <td>12 May 2021, 12:56 pm</td>
+                                                    <td>12345</td>
+                                                    <td>2:34</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>12 May 2021</td>
+                                                    <td>12 May 2021, 12:56 pm</td>
+                                                    <td>12345</td>
+                                                    <td>2:34</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>6</td>
+                                                    <td>12 May 2021</td>
+                                                    <td>12 May 2021, 12:56 pm</td>
+                                                    <td>12345</td>
+                                                    <td>2:34</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>7</td>
+                                                    <td>12 May 2021</td>
+                                                    <td>12 May 2021, 12:56 pm</td>
+                                                    <td>12345</td>
+                                                    <td>2:34</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>8</td>
+                                                    <td>12 May 2021</td>
+                                                    <td>12 May 2021, 12:56 pm</td>
+                                                    <td>12345</td>
+                                                    <td>2:34</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>9</td>
+                                                    <td>12 May 2021</td>
+                                                    <td>12 May 2021, 12:56 pm</td>
+                                                    <td>12345</td>
+                                                    <td>2:34</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>10</td>
+                                                    <td>12 May 2021</td>
+                                                    <td>12 May 2021, 12:56 pm</td>
+                                                    <td>12345</td>
+                                                    <td>2:34</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="table-btn-area">
+                                            <a href="#" class="custom-btn2">Download PDF</a>
+                                            <a href="#" class="custom-btn2">Download Excel</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="view-user-page-content c_table1">
+                            <div class="custom-datatable width">
+                                <h2>Hazard Assessments</h2>
+                                <table id="" class="table nowrap table-bordered table_1" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Date</th>
+                                            <th>Submit Date and time</th>
+                                            <th>Location</th>
+                                            <th>Safe Work Permit Authorization Number(s)</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>abc city</td>
+                                            <td>12345</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>abc city</td>
+                                            <td>12345</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>abc city</td>
+                                            <td>12345</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>abc city</td>
+                                            <td>12345</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>abc city</td>
+                                            <td>12345</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>abc city</td>
+                                            <td>12345</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>abc city</td>
+                                            <td>12345</td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>abc city</td>
+                                            <td>12345</td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>abc city</td>
+                                            <td>12345</td>
+                                        </tr>
+                                        <tr>
+                                            <td>10</td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>abc city</td>
+                                            <td>12345</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="table-btn-area">
+                                    <a href="#" class="custom-btn2">Download PDF</a>
+                                    <a href="#" class="custom-btn2">Download Excel</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="view-user-page-content c_table1">
+                            <div class="custom-datatable width">
+                                <h2>Journey Management</h2>
+                                <table id="" class="table nowrap table-bordered table_1" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Date</th>
+                                            <th>Submit Date and time</th>
+                                            <th>Full Name</th>
+                                            <th>Mobile Number</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>John Deo</td>
+                                            <td>1234567890</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>John Deo</td>
+                                            <td>1234567890</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>John Deo</td>
+                                            <td>1234567890</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>John Deo</td>
+                                            <td>1234567890</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>John Deo</td>
+                                            <td>1234567890</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>John Deo</td>
+                                            <td>1234567890</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>John Deo</td>
+                                            <td>1234567890</td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>John Deo</td>
+                                            <td>1234567890</td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>John Deo</td>
+                                            <td>1234567890</td>
+                                        </tr>
+                                        <tr>
+                                            <td>10</td>
+                                            <td>12 May 2021</td>
+                                            <td>12 May 2021, 12:56 pm</td>
+                                            <td>John Deo</td>
+                                            <td>1234567890</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="table-btn-area">
+                                    <a href="#" class="custom-btn2">Download PDF</a>
+                                    <a href="#" class="custom-btn2">Download Excel</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    
+</body>
+
+    include ../layout/footer

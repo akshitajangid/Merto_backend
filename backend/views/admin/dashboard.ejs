@@ -1,0 +1,225 @@
+include ./layout/header
+<body>
+<div class="dashboard-area">
+
+    include ./layout/sidebar
+    include ./layout/topnav
+        <div class="dashboard-main">
+            <div class="breadcrumbs">
+                <h1>Dashboard</h1>
+            </div>
+
+            <div class="dashboard-main-panel">
+                <div class="dash-page-content">
+                    <div class="dash-top-block odd">
+                        <ul>
+                            <li>
+                                <figure>
+                                    <img src="#{process.env.APP_URL}public/images/from-icon.png" alt="">
+                                </figure>
+                                <span>Worker Daily Log</span>
+                                <strong>1,23,456</strong>
+                                <small>15% Last Month</small>
+                            </li>
+                            <li>
+                                <figure>
+                                    <img src="#{process.env.APP_URL}public/images/menu-icon4-active.png" alt="">
+                                </figure>
+                                <span>Safety Manual</span>
+                                <strong>1,23,456</strong>
+                                <small>15% Last Month</small>
+                            </li>
+                            <li>
+                                <figure>
+                                    <img src="#{process.env.APP_URL}public/images/icon2.png" alt="">
+                                </figure>
+                                <span>Inspections</span>
+                                <strong>1,23,456</strong>
+                                <small>15% Last Month</small>
+                            </li>
+                            <li>
+                                <figure>
+                                    <img src="#{process.env.APP_URL}public/images/menu-icon6-active.png" alt="">
+                                </figure>
+                                <span>Hazard Assessments</span>
+                                <strong>1,23,456</strong>
+                                <small>15% Last Month</small>
+                            </li>
+                            <li>
+                                <figure>
+                                    <img src="#{process.env.APP_URL}public/images/menu-icon7-active.png" alt="">
+                                </figure>
+                                <span>Journey Management</span>
+                                <strong>1,23,456</strong>
+                                <small>15% Last Month</small>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="dash-custom-panel1">
+                        <div class="dash-chart">
+                            <h3><span>Total Users</span>1,23,456</h3>
+                            <select name="" id="" class="custom-select" placeholder="2021">
+                                <option value="">2021</option>
+                                <option value="">2020</option>
+                                <option value="">2019</option>
+                            </select>
+
+                            <div class="chart_1">
+                                <img src="#{process.env.APP_URL}public/images/line-chart.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="dash_box1">
+                            <div class="dash-top-block">
+                                <ul>
+                                    <li>
+                                        <figure>
+                                            <img src="#{process.env.APP_URL}public/images/bike-icon.png" alt="">
+                                        </figure>
+                                        <span>ATV Inspection</span>
+                                        <strong>1,23,456</strong>
+                                        <small>15% Last Month</small>
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <img src="#{process.env.APP_URL}public/images/icon4.png" alt="">
+                                        </figure>
+                                        <span>Truck Inspection</span>
+                                        <strong>1,23,456</strong>
+                                        <small>15% Last Month</small>
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <img src="#{process.env.APP_URL}public/images/icon3.png" alt="">
+                                        </figure>
+                                        <span>Mulcher Inspection</span>
+                                        <strong>1,23,456</strong>
+                                        <small>15% Last Month</small>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dash-block-panel_2">
+                        <div class="dash-top-block">
+                            <ul>
+                                <li>
+                                    <figure>
+                                        <img src="#{process.env.APP_URL}public/images/android-icon.png" alt="">
+                                    </figure>
+                                    <span>Mobile User</span>
+                                    <strong>1,23,456</strong>
+                                    <small>15% Last Month</small>
+                                </li>
+                                <li>
+                                    <figure>
+                                        <img src="#{process.env.APP_URL}public/images/android-icon.png" alt="">
+                                    </figure>
+                                    <span>Tablet User</span>
+                                    <strong>1,23,456</strong>
+                                    <small>15% Last Month</small>
+                                </li>
+                                <li>
+                                    <figure>
+                                        <img src="#{process.env.APP_URL}public/images/apple-icon.png" alt="">
+                                    </figure>
+                                    <span>iPhone User</span>
+                                    <strong>1,23,456</strong>
+                                    <small>15% Last Month</small>
+                                </li>
+                                <li>
+                                    <figure>
+                                        <img src="#{process.env.APP_URL}public/images/apple-icon.png" alt="">
+                                    </figure>
+                                    <span>iPad User</span>
+                                    <strong>1,23,456</strong>
+                                    <small>15% Last Month</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="dash-table">
+                        <h2>Recently submitted form</h2>
+                        <div class="custom-datatable">
+                            <table class="table nowrap table-bordered dTable" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Submitted form</th>
+                                        <th>Full name</th>
+                                        <th>Email address</th>
+                                        <th>Submit Date and time</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Worker Daily Log</td>
+                                        <td>
+                                            <div class="name">
+                                                <img src="#{process.env.APP_URL}public/images/pic3.png" alt=""> John Deo
+                                            </div>
+                                        </td>
+                                        <td>johndeo@gmail.com</td>
+                                        <td>12 May 2021, 12:56 pm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Safety Manual</td>
+                                        <td>
+                                            <div class="name">
+                                                <img src="#{process.env.APP_URL}public/images/pic3.png" alt=""> John Deo
+                                            </div>
+                                        </td>
+                                        <td>johndeo@gmail.com</td>
+                                        <td>12 May 2021, 12:56 pm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>ATV Inspections</td>
+                                        <td>
+                                            <div class="name">
+                                                <img src="#{process.env.APP_URL}public/images/pic3.png" alt=""> John Deo
+                                            </div>
+                                        </td>
+                                        <td>johndeo@gmail.com</td>
+                                        <td>12 May 2021, 12:56 pm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>Hazard Assessments</td>
+                                        <td>
+                                            <div class="name">
+                                                <img src="#{process.env.APP_URL}public/images/pic3.png" alt=""> John Deo
+                                            </div>
+                                        </td>
+                                        <td>johndeo@gmail.com</td>
+                                        <td>12 May 2021, 12:56 pm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>Journey Management</td>
+                                        <td>
+                                            <div class="name">
+                                                <img src="#{process.env.APP_URL}public/images/pic3.png" alt=""> John Deo
+                                            </div>
+                                        </td>
+                                        <td>johndeo@gmail.com</td>
+                                        <td>12 May 2021, 12:56 pm</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+    include ./layout/footer

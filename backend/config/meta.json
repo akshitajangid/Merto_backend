@@ -1,0 +1,33 @@
+{
+    "ERRORMSG":"Something went wrong. Please contact to support.",
+    "USERCREATED":"Authentication successfully",
+    "UNAUTHORIZED":"unauthorized",
+    "SUCCESS":"success",
+    "INVALIDFACEBOOKTOKEN":"Invalid facebook access token",
+    "INVALIDEMAILPASSWORD":"Invalid email or password",
+    "INVALIDPASSWORD":"Invalid password",
+    "USERINACTIVE":"You're Inactive.! contact to admin.",
+    "TOKENREFRESHED":"Token refreshed.",
+    "INVALIDREFRESHTOKEN":"Invalid refresh access token",
+    "EMAILEXIST":"Email already exist",
+    "USERISNOTVERIFY":"Your account is not verified.! Please verify your account.",
+    "EMAILNOTEXIST":"Invalid email",
+    "VERIFYMAIL":"Verification mail send succesfullly",
+    "FORGOTMAIL":"Forgot password mail send succefullly",
+    "ENCRYPTIONKEY":"sametalk@987",
+    "OTPINVALID":"Invalid OTP",
+    "OTPEXPIRED":"OTP expired",
+    "OTPVERIFY":"OTP verify successfully",
+    "PASSWORDUPDATED":"Password Updated succesfully",
+    "INVALIDGOOGLETOKEN":"Invalid google access token",
+    "USERNOTFOUND":"User not found",
+    "OLDPASSWORDNOTMATCH":"Old password not matched",
+    "PROFILEUPDATED":"Profile updated succesfully",
+    "DATAFATCH":"Data retrive succesfully",
+    "INVALIDURL":"Invalid URL",
+    "INVALIDEMAIL":"Invalid email",
+    "NODATAFOUND":"No data found"
+    
+    
+   
+}

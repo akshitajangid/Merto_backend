@@ -1,0 +1,23 @@
+include ../layout/header
+
+<body>
+    <!-- <div class="loadScreen"><img src="#{process.env.APP_URL}public/images/page-loading.gif" alt=""></div> -->
+    <section class="login-page-wrapper">
+        <div class="loginRegister_form_outer">
+            <div class="loginRegister_form">
+                <div class="logo"><img src="#{process.env.APP_URL}public/images/login_logo.png" alt=""></div>
+                <form action="#{process.env.ADMIN_URL}" method="get">
+                    <div class="success-mail">
+                        <img src="#{process.env.APP_URL}public/images/icon1.png" alt="">
+                        <h3>Email Sent!</h3>
+                        <small>Please check your email address, we will sent a link to reset password.</small>
+                    </div>
+                    <div class="input_field submit">
+                        <input type="submit" value="Login">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+include ../layout/footer
