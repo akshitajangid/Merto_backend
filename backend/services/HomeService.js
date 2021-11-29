@@ -113,7 +113,52 @@ module.exports = {
                 }
             });
         })
-    }
+    },
+    getMatchTeam:async (data) => {
+        return new Promise((resolve, reject) => {
+            queryWrapper.execute(`select league_id,home_team_id,away_team_id from merto_tbl_fixture where id=?` ,[data.fixtures_id], function (response) {
+                if (response.errno) {
+                    resolve({ success: false, message: response.sqlMessage })
+                } else {
+                    resolve({ success: true, message: meta.USERCREATED, data: response })
+                }
+            });
+        })
+    },
+    getMatchEvent:async (data) => {
+        return new Promise((resolve, reject) => {
+            queryWrapper.execute(`select event from merto_tbl_fixture_event where fixture_id=?` ,[data.fixtures_id], function (response) {
+                if (response.errno) {
+                    resolve({ success: false, message: response.sqlMessage })
+                } else {
+                    resolve({ success: true, message: meta.USERCREATED, data: response })
+                }
+            });
+        })
+    },
+    getMatchsPrediction:async (data) => {
+        return new Promise((resolve, reject) => {
+            queryWrapper.execute(`select predictions,teams,comparison from merto_tbl_fixture_predictions where fixture_id=?` ,[data.fixtures_id], function (response) {
+                if (response.errno) {
+                    resolve({ success: false, message: response.sqlMessage })
+                } else {
+                    resolve({ success: true, message: meta.USERCREATED, data: response })
+                }
+            });
+        })
+    },
+    getMatchByTeamId:async (data) => {
+        return new Promise((resolve, reject) => {
+            let query= "where (home_team_id ="+data.team_id+" or away_team_id ="+data.team_id+" )";
+            queryWrapper.execute(`select home_team_id, away_team_id, goals, timestamp from merto_tbl_fixture ` +query ,[], function (response) {
+                if (response.errno) {
+                    resolve({ success: false, message: response.sqlMessage })
+                } else {
+                    resolve({ success: true, message: meta.USERCREATED, data: response })
+                }
+            });
+        })
+    },
     
     
 }

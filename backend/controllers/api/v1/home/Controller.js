@@ -1,11 +1,11 @@
 const { Response, HttpCodes } = require('../../../../helpers/response');
 const log4js = require('../../../../common/logger');
 const logger = log4js.getLogger('LeagueController');
-const {getCompetition,getTotalCompetition,getFavCompetition,getFavTotalCompetition,getFavTeamCompetition,getMatchPlayer,getMatch,getMatchStatistics} = require('../../../../services/HomeService');
+const {getCompetition,getTotalCompetition,getFavCompetition,getFavTotalCompetition,getFavTeamCompetition,getMatchPlayer,getMatch,getMatchStatistics,getMatchTeam,getMatchsPrediction,getMatchEvent} = require('../../../../services/HomeService');
 const {getLeagueById,getLeagueTeam} = require('../../../../services/LeagueService');
 const {getTeamById} = require('../../../../services/TeamService');
 const {getFaviourateLeague,getFaviourateTeam} = require('../../../../services/UserService');
-
+const {getQuotes} = require('../../../../services/OtherService');
 
 var { signAccessToken, signRefreshToken } = require('../../../../helpers/JwtHelper');
 const meta = require('../../../../config/meta.json');
@@ -293,5 +293,49 @@ module.exports = {
             }
         }
     },
-
+    getMatchEvent:async (req, res) => {
+        let response = new Response(req, res);
+        const bodyData = req.body;
+        bodyData.userId=req.userId;
+        let getMatchs=await getMatchEvent(bodyData)
+        let getMatchsPredictions=await getMatchsPrediction(bodyData)
+        let getQuote=await getQuotes()
+        let getMatchTeams=await getMatchTeam(bodyData)
+        if(getMatchs.success){
+            let getmatchevent=getMatchs.data;
+            let getMatchsPredictionsdata=getMatchsPredictions.data;
+            for(var i=0;i<getmatchevent.length;i++){
+                getmatchevent[i].event=JSON.parse(getmatchevent[i].event);
+            }
+            for(var i=0;i<getMatchsPredictionsdata.length;i++){
+                getMatchsPredictionsdata[i].predictions=JSON.parse(getMatchsPredictionsdata[i].predictions);
+                getMatchsPredictionsdata[i].teams=JSON.parse(getMatchsPredictionsdata[i].teams);
+                getMatchsPredictionsdata[i].comparison=JSON.parse(getMatchsPredictionsdata[i].comparison);
+            }
+            console.log(getMatchsPredictions.data);
+            var result={
+                'event':getmatchevent,
+                'prediction':getMatchsPredictionsdata,
+                'qutoes':getQuote.data
+            }
+            response.status(HttpCodes.OK).data(true, meta.SUCCESS, result).send();
+        }
+        else{
+            response.status(HttpCodes.OK).error(meta.NODATAFOUND).send();
+        }
+        console.log(getQuote);
+        // if (getMatchs.success) {
+        //     if(getMatchs.data.length >0){
+        //         for(var i=0;i<getMatchs.data.length;i++){
+        //             let matchsta=getMatchs.data[i];
+        //             matchsta.team=JSON.parse(matchsta.team)
+        //             matchsta.statistics=JSON.parse(matchsta.statistics)
+        //         }
+        //         response.status(HttpCodes.OK).data(true, meta.SUCCESS, getMatchs.data).send();
+        //     }
+        //     else{
+        //         response.status(HttpCodes.OK).error(meta.NODATAFOUND).send();
+        //     }
+        // }
+    },
 }
