@@ -19,24 +19,24 @@ module.exports = {
             ca: ["readCertFile"]
         }
     },
-    connection: {
-        dbConnection: mysql.createConnection({
-            host: 'localhost',
-            port: '3306',
-            user: 'merto',
-            password: 'Merto@4321',
-            database: 'merto',
-            multipleStatements: true
-        })
-    },
     // connection: {
     //     dbConnection: mysql.createConnection({
     //         host: 'localhost',
     //         port: '3306',
-    //         user: 'root',
-    //         password: '',
-    //         database: 'sametalk',
+    //         user: 'merto',
+    //         password: 'Merto@4321',
+    //         database: 'merto',
     //         multipleStatements: true
     //     })
     // },
+    connection: {
+        dbConnection: mysql.createConnection({
+            host: 'localhost',
+            port: '3306',
+            user: 'root',
+            password: '',
+            database: 'merto',
+            multipleStatements: true
+        })
+    },
 };

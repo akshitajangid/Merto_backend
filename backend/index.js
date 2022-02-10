@@ -1,3 +1,4 @@
+console.log('fdgfdgfdgdf');
 'use strict';
 const queryWrapper = require('./config/database/queryWrapper');
 // const databaseSetupSql = require('./config/database/dabaseStatement');
@@ -52,6 +53,7 @@ logger.info(config.env);
 app.use(cors());
 
 // View engine setup
+
 app.set('views', join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 

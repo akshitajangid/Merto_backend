@@ -4,6 +4,10 @@ const queryWrapper = require('../config/database/queryWrapper')
 const dbQuery = require('../common/dbQueries')
 const meta = require('../config/meta.json');
 const fs = require('fs');
+const config = require('../config/index');
+
+const mysql = config.connection.dbConnection;
+
 //[SERVICE FOR LOGIN]
 module.exports = {
     getleague: async (data) => {
@@ -115,6 +119,63 @@ module.exports = {
                     resolve({ success: true, message: meta.USERCREATED, data: response })
                 }
             });
+        })
+    },
+    getLeagugeByTeamId:async (data) => {
+        
+        return new Promise((resolve, reject) => {
+            mysql.query(
+                `select (SELECT JSON_ARRAYAGG(
+                    JSON_OBJECT(
+                      'id',mtb.id,
+                      'name',mtb.name,
+                      'type',mtb.type,
+                      'logo',mtb.logo,
+                      'score',
+                            (SELECT JSON_ARRAYAGG(
+                                JSON_OBJECT(
+                                    'rank',merto_tbl_league_standing.rank,
+                                    'team_id', merto_tbl_league_standing.team_id,
+                                    'team_name',merto_tbl_league_standing.team_name,
+                                    'team_logo',merto_tbl_league_standing.team_logo,
+                                    'points', merto_tbl_league_standing.points,
+                                    'goalsDiff',merto_tbl_league_standing.goalsDiff,
+                                    'all',merto_tbl_league_standing.all
+                                )
+                            )
+                            FROM merto_tbl_league_standing
+                            WHERE merto_tbl_league_standing.league_id = mtb.id)
+                         
+                    )
+                    )
+                   FROM merto_tbl_league as mtb where mtb.id = merto_league_team.league_id ) AS league 
+                  from merto_league_team where team_id=? `, [data.team_id],
+                (error, results, fields) => {
+                    if (error) {
+                        reject(error);
+                    }
+
+                    var res = []
+                    if(results){
+                        for(var i=0; i<results.length;i++){
+                            let league=JSON.parse(results[i].league)
+                            let score=league[i].score;
+                            for(var j=0; j<score.length;j++){
+                                score[j].all=JSON.parse(score[j].all)
+                            }
+                            var obj = {
+                                league:league
+                            }
+                            res.push(league)
+                        }
+                        resolve({ success: true, message: meta.USERCREATED, data: res })
+                    }
+                    else{
+                        resolve({ success: true, message: meta.USERCREATED, data: results })
+                    }
+                    
+                });
+
         })
     },
 }

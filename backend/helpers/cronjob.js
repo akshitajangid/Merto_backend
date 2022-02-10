@@ -17,7 +17,7 @@ module.exports = {
     },
     StoreLeadugeCountryData: async (data,league_id) => {
         let insertData = [ league_id,data.name,data.code,data.flag];
-        console.log('league_id'+league_id);
+        //console.log('league_id'+league_id);
         return new Promise((resolve, reject) => {
             queryWrapper.execute(`INSERT INTO merto_league_country(league_id,name,code,flag) VALUES (?,?,?,?)`,insertData, function (response) {
                 if (response.errno) {
@@ -158,7 +158,7 @@ module.exports = {
     },
     Storefixtures: async (fixture,league,teams,goals,score) => {
         let insertData = [ fixture.id,fixture.referee,fixture.timezone,fixture.date,fixture.timestamp,JSON.stringify(fixture.periods),JSON.stringify(fixture.venue),JSON.stringify(fixture.status),league.id,teams.home.id,teams.away.id,JSON.stringify(goals),JSON.stringify(score)];
-        console.log(insertData);
+        // console.log(insertData);
         return new Promise((resolve, reject) => {
             queryWrapper.execute(`INSERT INTO merto_tbl_fixture(id,referee,timezone,date,timestamp,periods,venue,status,league_id,home_team_id,away_team_id,goals,score) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)`,insertData, function (response) {
                 if (response.errno) {
@@ -198,7 +198,6 @@ module.exports = {
                 for(var j=0;j<res.length;j++){
                     let team=res[j].team;
                     let players=res[j].players;
-                    console.log(players.length);
                     for(var k=0;k<players.length;k++){
                         let player=players[k].player;
                         let statistics=players[k].statistics;
@@ -214,7 +213,6 @@ module.exports = {
                         let cards=statistics[0].cards;
                         let penalty=statistics[0].penalty;
                         let insertData = [ player.id,fixtureid,team.id,player.name,player.photo,JSON.stringify(games),offsides,JSON.stringify(shots),JSON.stringify(goals),JSON.stringify(passes),JSON.stringify(tackles),JSON.stringify(duels),JSON.stringify(dribbles),JSON.stringify(fouls),JSON.stringify(cards),JSON.stringify(penalty)];
-                        console.log(insertData);
                             queryWrapper.execute(`INSERT INTO merto_tbl_player(player_id,fixtures_id,team_id,name,photo,game,offsides,shots,goals,passes,tackles,duels,dribbles,fouls,cards,penalty) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,insertData, function (response) {
                                 if (response.errno) {
                                 } else {
@@ -331,7 +329,6 @@ module.exports = {
                     let team=res[j].team;
                     let statistics=res[j].statistics;
                     let insertData = [ fixtureid,JSON.stringify(team),JSON.stringify(statistics)];
-                    console.log(insertData);
                     queryWrapper.execute(`INSERT INTO merto_tbl_fixture_statistics(fixture_id,team,statistics) VALUES (?,?,?)`,insertData, function (response) {
                     if (response.errno) {
                         console.log(response.sqlMessage);
@@ -378,7 +375,6 @@ module.exports = {
                     let h2h=res[j].h2h;
 
                     let insertData = [ fixtureid,JSON.stringify(predictions),JSON.stringify(league),JSON.stringify(teams),JSON.stringify(comparison),JSON.stringify(h2h)];
-                    console.log(insertData);
                     queryWrapper.execute(`INSERT INTO merto_tbl_fixture_predictions(fixture_id,predictions,league,teams,comparison,h2h) VALUES (?,?,?,?,?,?)`,insertData, function (response) {
                     if (response.errno) {
                         console.log(response.sqlMessage);
@@ -420,7 +416,6 @@ module.exports = {
                 for(var j=0;j<res.length;j++){
                     let event=res[j];
                     let insertData = [ fixtureid,JSON.stringify(event)];
-                    console.log(insertData);
                     queryWrapper.execute(`INSERT INTO merto_tbl_fixture_event(fixture_id,event) VALUES (?,?)`,insertData, function (response) {
                     if (response.errno) {
                         console.log(response.sqlMessage);
@@ -467,7 +462,7 @@ module.exports = {
                         let insertData = [ league.id,league.season,st.rank,st.team.id,st.team.name,st.team.logo,st.points,st.goalsDiff,st.group,st.form,st.status,st.description,JSON.stringify(st.all),JSON.stringify(st.home),JSON.stringify(st.away),st.update];
                         queryWrapper.execute('INSERT INTO merto_tbl_league_standing(`league_id`, `season`, `rank`, `team_id`,`team_name`,`team_logo`, `points`, `goalsDiff`, `group`, `form`, `status`, `description`, `all`, `home`, `away`, `update_date`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',insertData, function (response) {
                         if (response.errno) {
-                            console.log(response.sql);
+                            //console.log(response.sql);
                             resolve({ success: true, message: meta.USERCREATED, data: response.sql})
                         } else {
                         }

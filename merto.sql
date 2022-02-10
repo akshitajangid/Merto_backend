@@ -34,7 +34,7 @@ CREATE TABLE `merto_tbl_app_content` (
   `terms` text NOT NULL,
   `privacy` text NOT NULL,
   `creted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -51,7 +51,7 @@ CREATE TABLE `merto_tbl_bet` (
   `bet_name` varchar(255) NOT NULL,
   `slip_no` varchar(255) NOT NULL,
   `timestamp` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -66,7 +66,7 @@ CREATE TABLE `merto_tbl_contact` (
   `email` varchar(255) NOT NULL,
   `message` varchar(255) NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -79,7 +79,7 @@ CREATE TABLE `merto_tbl_fav_competition` (
   `user_id` varchar(255) NOT NULL,
   `competition_id` varchar(255) NOT NULL,
   `timestamp` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -92,7 +92,7 @@ CREATE TABLE `merto_tbl_fav_leagues` (
   `user_id` varchar(255) NOT NULL,
   `leagues_id` varchar(255) NOT NULL,
   `timestamp` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -105,7 +105,7 @@ CREATE TABLE `merto_tbl_fav_team` (
   `user_id` varchar(255) NOT NULL,
   `team_id` varchar(255) NOT NULL,
   `timestamp` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -118,7 +118,7 @@ CREATE TABLE `merto_tbl_follow_teams` (
   `team_id` varchar(255) NOT NULL,
   `user_id` varchar(255) NOT NULL,
   `timestamp` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -131,7 +131,7 @@ CREATE TABLE `merto_tbl_help` (
   `queston` varchar(255) NOT NULL,
   `answer` varchar(255) NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -151,7 +151,7 @@ CREATE TABLE `merto_tbl_league` (
   `@live_lineups` varchar(255) DEFAULT NULL,
   `@live_stats` varchar(255) DEFAULT NULL,
   `@path` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -168,7 +168,7 @@ CREATE TABLE `merto_tbl_live_match_data` (
   `json` longtext,
   `live_score_id` varchar(255) DEFAULT NULL,
   `created` timestamp NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -187,7 +187,7 @@ CREATE TABLE `merto_tbl_live_score` (
   `@iscup` varchar(255) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -207,7 +207,7 @@ CREATE TABLE `merto_tbl_match_setting` (
   `yellow_cards` enum('0','1') NOT NULL,
   `red_cards` enum('0','1') NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -227,7 +227,7 @@ CREATE TABLE `merto_tbl_notification_setting` (
   `half_time_result` enum('0','1') NOT NULL,
   `full_time_result` enum('0','1') NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -238,15 +238,15 @@ CREATE TABLE `merto_tbl_notification_setting` (
 CREATE TABLE `merto_tbl_player` (
   `ai` int NOT NULL,
   `id` varchar(255) NOT NULL,
-  `category` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `fname` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `lname` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `image` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
-  `position` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `team` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `team_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `category` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8_general_ci DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8_general_ci DEFAULT NULL,
+  `fname` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8_general_ci DEFAULT NULL,
+  `lname` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8_general_ci DEFAULT NULL,
+  `image` longtext CHARACTER SET utf8mb4 COLLATE utf8_general_ci,
+  `position` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8_general_ci DEFAULT NULL,
+  `team` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8_general_ci DEFAULT NULL,
+  `team_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8_general_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -266,7 +266,7 @@ CREATE TABLE `merto_tbl_team` (
   `venue_image` longtext,
   `image` longtext,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -282,14 +282,14 @@ CREATE TABLE `merto_tbl_users` (
   `profile` varchar(255) DEFAULT NULL,
   `device_type` varchar(255) NOT NULL,
   `device_token` varchar(255) NOT NULL,
-  `social_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `social_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8_general_ci DEFAULT NULL,
   `language` varchar(255) NOT NULL,
   `login_type` varchar(255) NOT NULL,
   `active_time` varchar(255) NOT NULL,
   `otp` int DEFAULT NULL,
   `otp_expire_time` varchar(255) DEFAULT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci;
 
 --
 -- Indexes for dumped tables

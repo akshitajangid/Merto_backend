@@ -8,7 +8,12 @@ const { sendMail } = require('../../../../services/MailService');
 
 var { signAccessToken, signRefreshToken } = require('../../../../helpers/JwtHelper');
 const meta = require('../../../../config/meta.json');
-
+const tesseract = require("node-tesseract-ocr");
+const configs = {
+    lang: "eng", // default
+    oem: 3,
+    psm: 3,
+  }
 module.exports = {
 
     socialAuth: async (req, res) => {
@@ -27,31 +32,19 @@ module.exports = {
                     checkUsers.data[0].refreshToken = refreshToken.token
                     response.status(HttpCodes.OK).data(true, checkUsers.message, checkUsers.data[0]).send();
             } else {
-                    let emailcheck = await getUserByEmail(bodyData.email)
-                    if (emailcheck.success) {
-                        console.log(emailcheck.data.length);
-                        if (emailcheck.data.length == 0) {
-                            let user = await createSocailUser(bodyData)
-                            if (user.success) {
-                                let dbResponse = await getUserById(user.data)
-                                let token = await signAccessToken(dbResponse.data.id)
-                                let refreshToken = await signRefreshToken(dbResponse.data.id)
-                                dbResponse.data.type = 'signup'
-                                dbResponse.data.token = token.token
-                                dbResponse.data.refreshToken = refreshToken.token
-                                response.status(HttpCodes.OK).data(true, dbResponse.message, dbResponse.data).send();
-                            } else {
-                                response.status(HttpCodes.OK).error(dbResponse.message).send();
-                            }
+                        let user = await createSocailUser(bodyData)
+                        if (user.success) {
+                            let dbResponse = await getUserById(user.data)
+                            let token = await signAccessToken(dbResponse.data.id)
+                            let refreshToken = await signRefreshToken(dbResponse.data.id)
+                            dbResponse.data.type = 'signup'
+                            dbResponse.data.token = token.token
+                            dbResponse.data.refreshToken = refreshToken.token
+                            response.status(HttpCodes.OK).data(true, dbResponse.message, dbResponse.data).send();
+                        } else {
+                            response.status(HttpCodes.OK).error(meta.Error).send();
                         }
-                        else{
-                            response.status(HttpCodes.OK).error(meta.EMAILEXIST).send();
-                        }
-                    }
-                    else{
-                        response.status(HttpCodes.OK).error(meta.EMAILEXIST).send();
-                    }
-            }
+                }
         } else {
             response.status(HttpCodes.OK).error(meta.INVALIDFACEBOOKTOKEN).send();
         }

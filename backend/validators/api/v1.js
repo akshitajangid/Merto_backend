@@ -9,7 +9,7 @@ class Validators {
 		this.signup = new JoiValidate({
 			'body': {
 				'schema': Joi.object().keys({
-					name: Joi.string().min(3).max(20).required(),
+					name: Joi.string().min(3).required(),
 					email: Joi.string().required(),
 					password: Joi.string().trim().required(),
 					device_type:Joi.number().integer().required(),
@@ -32,8 +32,7 @@ class Validators {
 		this.socialAuth = new JoiValidate({
 			'body': {
 				'schema': Joi.object().keys({
-					name: Joi.string().min(3).max(20).required(),
-					email: Joi.string().required(),
+					name: Joi.string().min(3).required(),
 					device_type:Joi.number().integer().required(),
 					device_token:Joi.string().trim().required(),
 					language:Joi.string().trim().required(),

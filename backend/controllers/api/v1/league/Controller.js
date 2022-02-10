@@ -38,6 +38,7 @@ module.exports = {
         if (result.success) {
             if(result.data.length==0){
                 let add = await addfavouriteleague(bodyData)
+                console.log(add);
                 response.status(HttpCodes.OK).data(true, 'league added in your faviourate list', 1).send();
             }
             else{

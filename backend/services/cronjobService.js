@@ -35,8 +35,8 @@ module.exports = {
                         let seasonsD=await helpers.StoreLeadugeSeasonsData(seasons[j],leagueS.data);
                     }
                     await helpers.deleteLeagueStanding(league.id,year)
-                   let r= await helpers.storeLeagueStanding(league.id,year);
-                   console.log(r.data);
+                    let r= await helpers.storeLeagueStanding(league.id,year);
+                    //console.log(r.data);
                 }
                  resolve({ success: true, message: meta.USERCREATED, data: r.data})
             }).catch(function (error) {
@@ -48,9 +48,12 @@ module.exports = {
         let leaduges=await helpers.getleaguedata();
         let teamex=await helpers.deleteleagueteam();
         let leaduge=leaduges.data;
+        let totalleaduge=leaduge.length;
+        
         return new Promise((resolve, reject) => {
             let year=new Date().getFullYear();
-            for(var i=0;i<100;i++){
+            console.log(totalleaduge);
+            for(var i=0;i<totalleaduge;i++){
                 let leagueid=leaduge[i].id;
                 setTimeout(function timer() {
                     console.log(leagueid);
@@ -94,10 +97,12 @@ module.exports = {
     },
     StoreFixtures: async (data) => {
         let date = new Date()
-        let day = date.getDate();
-        let month = date.getMonth()+1;
+        let day = date.getDate().toString().padStart(2, "0");
+        let month = (date.getMonth()+1).toString().padStart(2, "0");
         let year = date.getFullYear();
-        let fullDate = data.date; //`${year}-${month}-${day}`;
+        let fullDate = `${year}-${month}-${day}`;
+        //data.date; //`${year}-${month}-${day}`;
+        console.log(fullDate);
         // let teamex=await helpers.deleteFixtures(fullDate);
          return new Promise(async(resolve, reject) => {
             var axios = require("axios").default;
@@ -112,6 +117,7 @@ module.exports = {
             };
             axios.request(options).then(async function (response) {
                 let res=response.data.response;
+                console.log(res.length);
                 for(var j=0;j<res.length;j++){
                     let fixture=res[j].fixture;
                     let league=res[j].league;
@@ -131,8 +137,7 @@ module.exports = {
                     await helpers.storestatistics(fixtureid);
                     await helpers.storepredictions(fixtureid);
                     await helpers.storeEvent(fixtureid);
-                    
-                    resolve({ success: true, message: meta.USERCREATED, data: res})
+                    console.log(j);
                 }
                 resolve({ success: true, message: meta.USERCREATED, data: 1})
             }).catch(function (error) {
